@@ -6,13 +6,13 @@ class ToyCard extends Component {
     console.log(this.props.toy)
     return (
       <div className="card">
-        <h2>{this.props.toy.name}</h2>
-        <img src={this.props.toy.image} alt={this.props.toy.name} className="toy-avatar" />
-        <p>{this.props.toy.likes} Likes </p>
+        <h2>{this.props.name}</h2>
+        <img src={this.props.image} alt={this.props.name} className="toy-avatar" />
+        <p>{this.props.likes} Likes </p>
         <button className="like-btn">Like {'<3'}</button>
         <button className="del-btn">Donate to GoodWill</button>
       </div>
-    );
+    )
   }
 
 }

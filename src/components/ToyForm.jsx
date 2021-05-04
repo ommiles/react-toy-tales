@@ -16,23 +16,23 @@ class ToyForm extends Component {
         <form className="add-toy-form" onSubmit={this.handleSubmit}>
           <h3>Create a toy!</h3>
           <input 
-          type="text" 
-          name="name" 
-          placeholder="Enter a toy's name..." 
-          className="input-text"/>
+            type="text" 
+            name="name" 
+            placeholder="Enter a toy's name..." 
+            className="input-text"/>
           <br/>
           <input 
-          type="text" 
-          name="image" 
-          placeholder="Enter a toy's image URL..." 
-          className="input-text"
-          onChange={this.handleChange} />
+            type="text" 
+            name="image" 
+            placeholder="Enter a toy's image URL..." 
+            className="input-text"
+            onChange={this.handleChange} />
           <br/>
           <input 
-          type="submit" 
-          name="submit" 
-          value="Create New Toy" 
-          className="submit"/>
+            type="submit" 
+            name="submit" 
+            value="Create New Toy" 
+            className="submit"/>
         </form>
       </div>
     );
