@@ -2,37 +2,35 @@ import React, { Component } from 'react';
 
 class ToyForm extends Component {
 
-  handleSubmit = (e) => {
-    console.log(e.target)
+  state = {
+    name: '',
+    image: '',
+    likes: 0
   }
-  
+
   handleChange = (e) => {
-    console.log(e.target)
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.postToyData(this.state)
+    e.target.reset()
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="container">
         <form className="add-toy-form" onSubmit={this.handleSubmit}>
           <h3>Create a toy!</h3>
-          <input 
-            type="text" 
-            name="name" 
-            placeholder="Enter a toy's name..." 
-            className="input-text"/>
+          <input onChange={this.handleChange} type="text" name="name" placeholder="Enter a toy's name..." className="input-text"/>
           <br/>
-          <input 
-            type="text" 
-            name="image" 
-            placeholder="Enter a toy's image URL..." 
-            className="input-text"
-            onChange={this.handleChange} />
+          <input onChange={this.handleChange} type="text" name="image" placeholder="Enter a toy's image URL..." className="input-text"/>
           <br/>
-          <input 
-            type="submit" 
-            name="submit" 
-            value="Create New Toy" 
-            className="submit"/>
+          <input type="submit" name="submit" value="Create New Toy" className="submit"/>
         </form>
       </div>
     );

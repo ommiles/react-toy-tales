@@ -1,22 +1,12 @@
 import React from 'react';
 import ToyCard from './ToyCard'
 
-const ToyContainer = (props) => {
+const ToyContainer = ({ allToys, deleteToy, patchLikes }) => {
   return(
     <div id="toy-collection">
-      {props.toys.map((toy) => (
-        <ToyCard
-          key={toy.id}
-          id={toy.id}
-          name={toy.name}
-          image={toy.image}
-          likes={toy.likes}
-          deleteToy={props.deleteToy}
-          updateToy={props.updateToy}
-        />
-      ))}
+      {allToys.map(toy => <ToyCard toy={toy} key={toy.id} deleteToy={deleteToy} patchLikes={patchLikes} />)}
     </div>
-  )
-};
+  );
+}
 
 export default ToyContainer;
